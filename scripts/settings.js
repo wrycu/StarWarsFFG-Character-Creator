@@ -20,7 +20,7 @@ export function setting_audio(val) {
  * Register SettingsConfig hook to render file-picker buttons.
  */
 export function init() {
-    libWrapper.register("ffg-star-wars-enhancements", "SettingsConfig.prototype.activateListeners", (wrapper, ...args) => {
+    libWrapper.register("ffg-star-wars-char-creator", "SettingsConfig.prototype.activateListeners", (wrapper, ...args) => {
         var html = args[0];
         html.find('[data-dtype^="setting"]').each((idx, input) => {
             input = $(input);

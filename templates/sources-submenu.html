@@ -1,0 +1,24 @@
+<form class="flexcol">
+    <header class="flexcol ffgcc-submenu-header">
+        <button type="submit" name="submit" class="ffgcc-pointer">
+            {{localize 'HCT.Setting.Sources.Save'}}
+        </button>
+        <hr class="ffgcc-margin-small">
+    </header>
+    <div class="flexcol ffgcc-submenu-content">
+        {{#each source}}
+        <div class="flexcol ffgcc-padding-r-small ffgcc-padding-b-tiny">
+            <button type="button" class="ffgcc-pointer ffgcc-collapsible ffgcc-height-46">{{label}}&nbsp&nbsp<i data-ffgcc-source-chevron
+                    class="fa fa-chevron-right"></i></button>
+            <div class="ffgcc-collapsible-content">
+                {{#each compendia}}
+                <input type="checkbox" name="{{@../key}}" value="{{collection}}" id="{{@../key}}_{{collection}}"
+                    {{checkedIf checked}}>
+                <label for="{{@../key}}_{{collection}}">{{label}}</label>
+                <br>
+                {{/each}}
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</form>

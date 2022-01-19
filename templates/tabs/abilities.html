@@ -1,0 +1,80 @@
+<section id="abDiv" class="tab-body apply-header-font" data-hct_tab_section="1">
+    <main class='tab-content hct-panel-container'>
+        <div class="hct-panel-left">
+            <div data-hct-ability-methods>
+                <h2 class="hct-area-title">{{localize 'HCT.Abilities.Method'}}</h2>
+                <button type="button" class="step-button hct-option centered-text" data-mode="roll"></button>
+                <button type="button" class="step-button hct-option centered-text" data-mode="standard">{{localize
+                    'HCT.Abilities.Buttons.StandardArray'}}</button>
+                <button type="button" class="step-button hct-option centered-text" data-mode="point-buy">{{localize
+                    'HCT.Abilities.Buttons.PointBuy'}}</button>
+                <button type="button" class="step-button hct-option centered-text" data-mode="manual">{{localize
+                    'HCT.Abilities.Buttons.ManualEntry'}}</button>
+            </div>
+            <div>
+                <h2 class="hct-area-title">{{localize 'HCT.Abilities.Values'}}</h2>
+                <div class='hct-flex'>
+                    <h3 class='hct-flex-grow-1'>{{localize 'HCT.Abilities.Str'}}</h3>
+                    <select class='hct-margin-r-small' data-hct-ability-score='str'></select>
+                    <p class='hct-width-min-72'>
+                        <span data-hct-ability-score-race-bonus='str'>+Race</span> = <span
+                            data-hct-ability-score-total='str'>Total</span>
+                        (<span data-hct-ability-score-mod='str'>+Mod</span>)
+                    </p>
+                </div>
+                <div class='hct-flex'>
+                    <h3 class='hct-flex-grow-1'>{{localize 'HCT.Abilities.Dex'}}</h3>
+                    <select class='hct-margin-r-small' data-hct-ability-score='dex'></select>
+                    <p class='hct-width-min-72'>
+                        <span data-hct-ability-score-race-bonus='dex'>+Race</span> = <span
+                            data-hct-ability-score-total='dex'>Total</span>
+                        (<span data-hct-ability-score-mod='dex'>+Mod</span>)
+                    </p>
+                </div>
+                <div class='hct-flex'>
+                    <h3 class='hct-flex-grow-1'>{{localize 'HCT.Abilities.Con'}}</h3>
+                    <select class='hct-margin-r-small' data-hct-ability-score='con'></select>
+                    <p class='hct-width-min-72'>
+                        <span data-hct-ability-score-race-bonus='con'>+Race</span> = <span
+                            data-hct-ability-score-total='con'>Total</span>
+                        (<span data-hct-ability-score-mod='con'>+Mod</span>)
+                    </p>
+                </div>
+                <div class='hct-flex'>
+                    <h3 class='hct-flex-grow-1'>{{localize 'HCT.Abilities.Int'}}</h3>
+                    <select class='hct-margin-r-small' data-hct-ability-score='int'></select>
+                    <p class='hct-width-min-72'>
+                        <span data-hct-ability-score-race-bonus='int'>+Race</span> = <span
+                            data-hct-ability-score-total='int'>Total</span>
+                        (<span data-hct-ability-score-mod='int'>+Mod</span>)
+                    </p>
+                </div>
+                <div class='hct-flex'>
+                    <h3 class='hct-flex-grow-1'>{{localize 'HCT.Abilities.Wis'}}</h3>
+                    <select class='hct-margin-r-small' data-hct-ability-score='wis'></select>
+                    <p class='hct-width-min-72'>
+                        <span data-hct-ability-score-race-bonus='wis'>+Race</span> = <span
+                            data-hct-ability-score-total='wis'>Total</span>
+                        (<span data-hct-ability-score-mod='wis'>+Mod</span>)
+                    </p>
+                </div>
+                <div class='hct-flex'>
+                    <h3 class='hct-flex-grow-1'>{{localize 'HCT.Abilities.Cha'}}</h3>
+                    <select class='hct-margin-r-small' data-hct-ability-score='cha'></select>
+                    <p class='hct-width-min-72'>
+                        <span data-hct-ability-score-race-bonus='cha'>+Race</span> = <span
+                            data-hct-ability-score-total='cha'>Total</span>
+                        (<span data-hct-ability-score-mod='cha'>+Mod</span>)
+                    </p>
+                </div>
+                <div class="hct-point-buy-area" data-hct-point-buy style="display: none;">
+                    <p class="centered-text hct-large-font">{{localize
+                        'HCT.Abilities.PointBuy.Score'}}
+                        <input disabled type='number' class='hct-width-max-2rem' data-hct-point-buy-score /> / <input disabled type='number' class='hct-width-max-2rem' data-hct-point-buy-max />
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="hct-panel-right hct-infoArea" data-hct_abilities_description></div>
+    </main>
+</section>

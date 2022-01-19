@@ -1,0 +1,39 @@
+<section id="basicsDiv" class="tab-body apply-header-font hct-y-scroll" data-hct_tab_section="0">
+    <main class='tab-content'>
+        <div class="form--padding">
+            <form class="flexcol" autocomplete="off">
+                <div class="hct-flex hct-padding-b-tiny" data-hero_name>
+                    <label class="hct-width-180">{{localize 'ffg-cc.basics.name'}}</label>
+                    <input data-dtype="{{this.type}}" name="{{this.module}}.{{this.key}}" type="text" value="{{this.value}}"/>
+                </div>
+                <div class="hct-flex hct-padding-b-tiny" data-hero_avatar>
+                    <label class="hct-width-180">{{localize 'ffg-cc.basics.avatar'}}</label>
+                    <input data-dtype="{{this.type}}" id="data-hero_avatar" type="text" value="{{this.value}}"/>
+                    <button type="button" class="div-button file-picker centered-text" data-filepick='avatar'>
+                        {{localize 'ffg-cc.pick-button'}}
+                    </button>
+                </div>
+                <div class="hct-flex hct-padding-b-tiny" data-hero_token>
+                    <label class="hct-width-180">{{localize 'ffg-cc.basics.token'}}</label>
+                    <input data-dtype="{{this.type}}" id="data-hero_token" type="text" value="{{this.value}}"/>
+                    <button type="button" class="div-button file-picker centered-text" data-filepick='token'>
+                        {{localize 'ffg-cc.pick-button'}}
+                    </button>
+                </div>
+                <div class="hct-flex hct-padding-b-tiny">
+                    <label class="hct-width-180">{{localize 'ffg-cc.basics.preview'}}</label>
+                    <div id="avatar-token-display">
+                        <img class="hct-icon-clickable hct-hover-shadow-accent hct-icon-borderless" id="avatar_img" data-img='avatar'
+                            title="Avatar" src="icons/svg/mystery-man.svg" data-filepick='avatar'>
+                        <img class="hct-icon-clickable hct-hover-shadow-accent hct-icon-borderless" id="token_img" data-img='token'
+                            title="Token" src="icons/svg/mystery-man.svg" data-filepick='token'>
+                    </div>
+                </div>
+                <div class="hct-flex hct-padding-b-tiny">
+                    <label class="hct-banner" data-tokenizer-warning>{{localize
+                        'HCT.Integration.Tokenizer.WarningOn'}}</label>
+                </div>
+            </form>
+        </div>
+    </main>
+</section>

@@ -1,5 +1,8 @@
 import { init as settings_init } from './scripts/settings.js'
-import { log_msg as log } from './scripts/util.js'
+import { log_msg as log, addActorDirectoryButton } from './scripts/util.js'
+import CharacterCreationTool from './scripts/app.js'
+
+const heroCreationTool = new CharacterCreationTool();
 
 Hooks.once('init', async function() {
     log('base_module', 'Initializing');
@@ -73,16 +76,20 @@ Hooks.once('ready', () => {
     /* register functionality here */
 });
 
+// Rendering the button on Actor's directory
+Hooks.on('renderActorDirectory', () => {
+    addActorDirectoryButton(heroCreationTool);
+});
+
 function register_hooks() {
     libWrapper.register(
-        'ffg-star-wars-enhancements',
+        'ffg-star-wars-char-creator',
         'game.ffg.RollFFG.prototype.toMessage',
         function (wrapped, ...args) {
             /*
                 we may want to monkeypatch a different function in the future. this location doesn't seem to have access
                 to the actual weapon in use. I'm not sure if we actually care yet, but worth considering.
              */
-            var data = attack_animation(this, ...args);
             return wrapped(...data);
         }
     );

@@ -1,0 +1,15 @@
+{
+    "ffg-cc.back": "Back",
+    "ffg-cc.next": "Next",
+    "ffg-cc.pick-button":"Select",
+    "ffg-cc.start.welcome": "hiya",
+    "ffg-cc.start.p1": "The Character Creator is a step-by-step process for creating a brand-new character for your game. Changes are saved as you progress, but the character is only created upon completion.",
+    "ffg-cc.start.p2": "The tool supports OggDude-imported data.",
+    "ffg-cc.start.remark": "pending",
+    "ffg-cc.start.credit": "This tool is heavily inspired by the Hero Creation Tool. They get more credit than I do!",
+
+    "ffg-cc.basics.name": "Name (required)",
+    "ffg-cc.basics.avatar": "Avatar",
+    "ffg-cc.basics.token": "Token",
+    "ffg-cc.basics.preview": "Preview"
+}
