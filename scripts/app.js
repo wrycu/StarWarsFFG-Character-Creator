@@ -67,19 +67,19 @@ export default class CharacterCreationTool extends Application {
     }
 
     // set listeners for tab navigation
-    $('[data-hct_tab_index]').on('click', (event) => {
-      this.currentTab = $(event.target).data('hct_tab_index');
+    $('[data-ffgcc_tab_index]').on('click', (event) => {
+      this.currentTab = $(event.target).data('ffgcc_tab_index');
       this.openTab(this.currentTab);
     });
-    $('[data-hct_back]').on('click', () => {
+    $('[data-ffgcc_back]').on('click', () => {
       this.currentTab--;
       this.openTab(this.currentTab);
     });
-    $('[data-hct_next]').on('click', () => {
+    $('[data-ffgcc_next]').on('click', () => {
       this.currentTab++;
       this.openTab(this.currentTab);
     });
-    $('[data-hct_submit]').on('click', () => this.confirmSubmittion());
+    $('[data-ffgcc_submit]').on('click', () => this.confirmSubmittion());
 
     this.openTab(-1);
   }
@@ -193,8 +193,8 @@ export default class CharacterCreationTool extends Application {
     handleNavs(index);
     $('.tab-body').hide();
     $('.tablinks').removeClass('active');
-    $(`[data-hct_tab_index=${index}]`).addClass('active');
-    $(`[data-hct_tab_section=${index}]`).show();
+    $(`[data-ffgcc_tab_index=${index}]`).addClass('active');
+    $(`[data-ffgcc_tab_section=${index}]`).show();
     switch (index) {
       case StepIndex.Spells:
         this.steps[StepIndex.Spells].update({ class: this.steps[StepIndex.Class].getUpdateData() });
@@ -240,12 +240,12 @@ function cleanUpErroneousItems(newActor) {
 
 function handleNavs(index) {
   // hides the tabs if switching to startDiv, else show them.
-  $('.hct-container .tabs').toggle(index !== -1);
+  $('.ffgcc-container .tabs').toggle(index !== -1);
 
   // disables back/next buttons where appropriate
-  const $footer = $('.hct-container footer');
-  $('[data-hct_back]', $footer).prop('disabled', index < StepIndex.Basics);
-  $('[data-hct_next]', $footer).prop('disabled', index >= StepIndex.Bio);
+  const $footer = $('.ffgcc-container footer');
+  $('[data-ffgcc_back]', $footer).prop('disabled', index < 0 );
+  $('[data-ffgcc_next]', $footer).prop('disabled', index >= StepIndex.length);
 }
 
 function setClassLevel(itemsFromCompendia, classData) {

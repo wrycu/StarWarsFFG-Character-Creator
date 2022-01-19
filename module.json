@@ -40,7 +40,7 @@
         "ffg-star-wars-char-creator.js"
     ],
     "styles": [
-        "styles/style.scss"
+        "styles/ffg-character-creator.css"
     ],
     "packs": []
 }

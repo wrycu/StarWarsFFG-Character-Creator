@@ -51,7 +51,6 @@ export async function preloadTemplates() {
   const templatePaths = [
     Constants.MODULE_PATH + '/templates/nav-tabs.html',
     Constants.MODULE_PATH + '/templates/nav-buttons.html',
-    Constants.MODULE_PATH + '/templates/tabs/abilities.html',
     Constants.MODULE_PATH + '/templates/tabs/background.html',
     Constants.MODULE_PATH + '/templates/tabs/basics.html',
     Constants.MODULE_PATH + '/templates/tabs/start.html',
