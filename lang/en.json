@@ -8,8 +8,11 @@
     "ffg-cc.start.remark": "pending",
     "ffg-cc.start.credit": "This tool is heavily inspired by the Hero Creation Tool. They get more credit than I do!",
 
-    "ffg-cc.basics.name": "Name (required)",
+    "ffg-cc.basics.name": "Name",
     "ffg-cc.basics.avatar": "Avatar",
     "ffg-cc.basics.token": "Token",
-    "ffg-cc.basics.preview": "Preview"
+    "ffg-cc.basics.preview": "Preview",
+
+    "ffg-cc.background.background": "Select your Background",
+    "ffg-cc.background.description.placeholder": "Please select a background to see its description"
 }

@@ -1,12 +1,8 @@
 import BasicsTab from "./tabs/basics.js";
 import BackgroundTab from "./tabs/background.js";
-import { preloadTemplates } from './util.js';
 
-// Initialize module
-Hooks.once('init', async () => {
-  //registerSettings();
-  await preloadTemplates();
-});
+
+
 
 var StepIndex =
 [

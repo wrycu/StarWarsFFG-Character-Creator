@@ -3,8 +3,9 @@
 */
 
 import { Step, StepEnum } from '../step.js';
+import InputOption from "../options/input_option.js";
+import * as Constants from '../constants.js';
 /*
-import * as Constants from '../constants';
 import InputOption from '../options/InputOption';
 import SettingKeys from '../settings.js';
  */
@@ -95,7 +96,7 @@ class _Basics extends Step {
   }
 
   setSourceData() {
-    this.useTokenizer = game.settings.get(Constants.MODULE_NAME, SettingKeys.USE_TOKENIZER);
+    this.useTokenizer = false;
   }
 
   renderData(data) {
@@ -103,7 +104,7 @@ class _Basics extends Step {
     this.nameOption = new InputOption(
       this.step,
       'name',
-      game.i18n.localize('HCT.Common.RequiredName'),
+      game.i18n.localize('ffg-cc.basics.name'),
       data?.actorName ?? '',
     );
     this.nameOption.render($('[data-hero_name]', this.section()));

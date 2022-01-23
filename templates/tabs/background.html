@@ -1,21 +1,32 @@
 <section id="backgroundDiv" class="tab-body apply-header-font" data-ffgcc_tab_section="1">
     <main class='tab-content hct-panel-container'>
         <div class="hct-panel-left">
-            <div data-hct_background_data>
-                <div data-hct_area="name">
-                    <h2 class="hct-area-title">{{localize 'HCT.Background.Name'}}</h2>
+            <div class="hct-icon-with-context hct-small-margin-b" data-hct-race-search>
+                <img class="hct-icon hct-width-60 hct-margin-r-tiny" title="raceIcon" src="icons/svg/mystery-man.svg" data-hct_race_icon>
+            </div>
+            <div data-hct_race_data>
+                <!-- filled by tabs/race.ts -->
+                <div data-hct_race_area="abilityScores">
+                    <h2 class="hct-area-title">{{localize 'HCT.Race.ASI'}}</h2>
+                    <section class='hct_data_elem'></section>
                 </div>
-                <div data-hct_area="alignment">
-                    <h2 class="hct-area-title">{{localize 'HCT.Background.Alignment'}}</h2>
-                </div>
-                <div data-hct_area="proficiences">
-                    <h2 class="hct-area-title">{{localize 'HCT.Common.Proficiencies'}}</h2>
-                </div>
-                <div data-hct_area="feature">
-                    <h2 class="hct-area-title">{{localize 'HCT.Common.Feature'}}</h2>
+                <div data-hct_race_area="feat">
+                    <h2 class="hct-area-title">{{localize 'HCT.Common.Feat'}}</h2>
+                    <div class="hct-icon-with-context">
+                        <a class="content-link hct-icon-link" draggable="false" data-pack="" data-id=""
+                            data-hct_feat_icon>
+                            <img class="hct-icon hct-icon-clickable" src="icons/svg/mystery-man.svg">
+                        </a>
+                        <section class='hct_data_elem'></section>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="hct-panel-right hct-infoArea" data-hct_background_description></div>
+        <div class="hct-panel-right hct-infoArea">
+            <div data-hct_race_description>{{ localize 'ffg-cc.background.description.placeholder' }}</div>
+            <hr data-hct_subrace_separator>
+            <div data-hct_subrace_description></div>
+        </div>
+
     </main>
 </section>

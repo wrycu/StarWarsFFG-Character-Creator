@@ -48,6 +48,13 @@
   padding: 0;
   margin: 0;
 }
+.ffgcc-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
 .hct-flex {
   display: flex;
 }

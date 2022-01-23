@@ -1,8 +1,20 @@
 import { init as settings_init } from './scripts/settings.js'
-import { log_msg as log, addActorDirectoryButton } from './scripts/util.js'
+import {log_msg as log, addActorDirectoryButton, preloadTemplates, buildSourceIndexes} from './scripts/util.js'
 import CharacterCreationTool from './scripts/app.js'
 
 const heroCreationTool = new CharacterCreationTool();
+
+// Initialize module
+Hooks.once('init', async () => {
+    //registerSettings();
+    await preloadTemplates();
+});
+
+Hooks.on('renderCharacterCreationTool', async function (app, html, data) {
+    await buildSourceIndexes();
+    await heroCreationTool.setupData();
+    heroCreationTool.renderChildrenData();
+});
 
 Hooks.once('init', async function() {
     log('base_module', 'Initializing');
