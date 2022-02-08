@@ -13,6 +13,11 @@
     "ffg-cc.basics.token": "Token",
     "ffg-cc.basics.preview": "Preview",
 
-    "ffg-cc.background.background": "Select your Background",
-    "ffg-cc.background.description.placeholder": "Please select a background to see its description"
+    "ffg-cc.background.background": "Background",
+    "ffg-cc.background.description.placeholder": "Please select a background to see its description",
+
+    "ffg-cc.emo-str.background": "Emotional Strength",
+    "ffg-cc.emo-str.description.placeholder": "Please select an emotional strength to see its description",
+    "ffg-cc.emo-weak.background": "Emotional Weakness",
+    "ffg-cc.emo-weak.description.placeholder": "Please select an emotional weakness to see its description"
 }

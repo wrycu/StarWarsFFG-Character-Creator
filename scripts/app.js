@@ -1,6 +1,6 @@
 import BasicsTab from "./tabs/basics.js";
 import BackgroundTab from "./tabs/background.js";
-
+import MoralityTab from "./tabs/morality.js";
 
 
 
@@ -8,6 +8,7 @@ var StepIndex =
 [
     'Basics',
     'Background',
+    'Morality',
     /*
     'Morality',
     'Species',
@@ -24,7 +25,7 @@ export default class CharacterCreationTool extends Application {
   constructor() {
     super();
     this.actor = undefined;
-    this.steps = [BasicsTab, BackgroundTab];
+    this.steps = [BasicsTab, BackgroundTab, MoralityTab];
   }
 
   static get defaultOptions() {

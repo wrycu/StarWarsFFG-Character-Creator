@@ -51,9 +51,10 @@ export async function preloadTemplates() {
     const templatePaths = [
         Constants.MODULE_PATH + '/templates/nav-tabs.html',
         Constants.MODULE_PATH + '/templates/nav-buttons.html',
-        Constants.MODULE_PATH + '/templates/tabs/background.html',
-        Constants.MODULE_PATH + '/templates/tabs/basics.html',
         Constants.MODULE_PATH + '/templates/tabs/start.html',
+        Constants.MODULE_PATH + '/templates/tabs/basics.html',
+        Constants.MODULE_PATH + '/templates/tabs/background.html',
+        Constants.MODULE_PATH + '/templates/tabs/morality.html',
     ];
 
     return loadTemplates(templatePaths);
@@ -62,6 +63,8 @@ export async function preloadTemplates() {
 async function getIndexEntriesForSource(source) {
     const sources = {
         'background': ['world.oggdudebackgrounds'],
+        'emotional_strength': ['world.emotionalstrengths'], // todo: change to oggdude naming scheme
+        'emotional_weakness': ['world.emotionalweaknesses'],  // todo: change to oggdude naming scheme
     };
 
     const indexEntries = [];
@@ -87,10 +90,28 @@ export async function get_background_entries() {
     return backgroundEntries;
 }
 
+export async function get_emotional_strengths() {
+    const strengths = await ((getIndexEntriesForSource('emotional_strength')));
+    console.log("emotional_strength")
+    console.log(strengths)
+    // sanitize entries to remove anything nonconforming to a Feature (for now, until Race becomes a type)
+    return strengths;
+}
+
+export async function get_emotional_weaknesses() {
+    const weaknesses = await ((getIndexEntriesForSource('emotional_weakness')));
+    console.log("emotional_weakness")
+    console.log(weaknesses)
+    // sanitize entries to remove anything nonconforming to a Feature (for now, until Race becomes a type)
+    return weaknesses;
+}
+
 export async function buildSourceIndexes() {
     console.log(`Indexing source compendiums`);
     const sourcePacks = {
         'background': ['world.oggdudebackgrounds'],
+        'emotional_strength': ['world.emotionalstrengths'], // todo: change to oggdude naming scheme
+        'emotional_weakness': ['world.emotionalweaknesses'],  // todo: change to oggdude naming scheme
     };
   const itemsPromises = [];
   game.packs.filter((p) => p.documentName != 'REMOVE_ME').forEach((p) => {
@@ -99,12 +120,8 @@ export async function buildSourceIndexes() {
 
       // name added by default on all when indexed
       addBackgroundFields(fieldsToIndex, sourcePacks, name);
-      //addRacialFeaturesFields(fieldsToIndex, sourcePacks, name);
-      //addClassFields(fieldsToIndex, sourcePacks, name);
-      //addClassFeaturesFields(fieldsToIndex, sourcePacks, name);
-      //addSpellFields(fieldsToIndex, sourcePacks, name);
-      //addFeatFields(fieldsToIndex, sourcePacks, name);
-      //addBackgroundFeaturesFields(fieldsToIndex, sourcePacks, name);
+      add_emotional_strengths(fieldsToIndex, sourcePacks, name);
+      add_emotional_weaknesses(fieldsToIndex, sourcePacks, name);
 
       if (fieldsToIndex.size) {
         fieldsToIndex.add('img');
@@ -120,6 +137,20 @@ function addBackgroundFields(fieldsToIndex, source, packName) {
     fieldsToIndex.add('data.requirements'); // for figuring subraces
     fieldsToIndex.add('data.content'); // for sidebar
   }
+}
+
+function add_emotional_strengths(fieldsToIndex, source, packName) {
+    if (source['emotional_strength'].includes(packName)) {
+        fieldsToIndex.add('data.requirements'); // for figuring subraces
+        fieldsToIndex.add('data.content'); // for sidebar
+    }
+}
+
+function add_emotional_weaknesses(fieldsToIndex, source, packName) {
+    if (source['emotional_weakness'].includes(packName)) {
+        fieldsToIndex.add('data.requirements'); // for figuring subraces
+        fieldsToIndex.add('data.content'); // for sidebar
+    }
 }
 
 export function setPanelScrolls($section) {
