@@ -52,8 +52,7 @@ class _Background extends Step {
                 console.log(selected_background)
                 // update icon and description
                 $('[data-hct_race_icon]').attr('src', selected_background.img || Constants.MYSTERY_MAN);
-                $('[data-hct_race_description]').html(TextEditor.enrichHTML(selected_background.name));
-                $('[data-hct_subrace_description]').html(TextEditor.enrichHTML(selected_background.content));
+                $('[data-hct_race_description]').html(TextEditor.enrichHTML(selected_background.content));
             },
             game.i18n.localize('ffg-cc.background.background'),
         );
